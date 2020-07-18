@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <% for( var i=0; i<length ; i++){ %>
+        <h5><%= process[i] %></h5>  
+        <a  href="/getEnvironment/<%= process[i] %>">Get Values</a>
+        <a class="ml-5" href="/setEnvironment/<%= process[i] %>">Update Values</a>
+  
+    <form action="/setEnvironment/add/<%= process[i] %>" method="POST">
+      <div class="form-group m-2">
+        <input required class="form-control mt-2 w-25" type="text" placeholder="Enter Key" name="key">
+        <input required class="form-control mt-2 w-25" type="text" placeholder="Enter Value" name="value">
+        <button class="btn btn-primary mt-2 " type="submit">Add Key and Value</button>
+      </div>
+    </form>
+    <br>
+    <% } %>
+    </div>
+  </body>
+</html>
